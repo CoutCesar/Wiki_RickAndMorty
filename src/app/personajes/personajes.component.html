@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <nav class="menuSuperior">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/images/logo.png" alt=""></a>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a routerLink="/">Inicio</a></li>
+                <li><a routerLink="/personajes">Personajes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="titulo">
+        <h2>Personajes de la serie</h2>
+    </div>
+
+    <ol id="resultados" class="listaResultados">
+        <li *ngFor="let character of characters">
+          <a [routerLink]="['/personaje', character.id]">
+            <img [src]="character.image" alt="{{ character.name }}">
+            <div>
+              <p>{{ character.name }}</p>
+              <p>ID: {{ character.id }}</p>
+            </div>
+          </a>
+        </li>
+      </ol>
+
+    <div class="pagination">
+        <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+    </div>
+
+    <br>
+
+    <footer>
+        <p>Página desarrollada por César Eduardo López Baltazar para la prueba de reclutamiento de Sithec.</p>
+        <p>Este sitio es una página de fans y no está afiliado, ni respaldado de ninguna manera por los creadores, productores o distribuidores de "Rick and Morty". La información proporcionada aquí es para fines de entretenimiento y no pretende ser oficial.</p>
+    </footer>
+</body>
+
+</html>

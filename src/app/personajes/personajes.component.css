@@ -1,0 +1,142 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.titulo{
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section {
+  flex: 1;
+}
+
+footer {
+  background-color: #181818;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+}
+
+.menuSuperior {
+  background-color: #181818;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menuSuperior a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menuSuperior img {
+  margin-right: 5px;
+}
+
+.menuSuperior ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menuSuperior li {
+  margin-right: 10px;
+}
+
+.menuSuperior a:hover {
+  color: #c9e619; /* Color diferente al hacer hover */
+}
+
+.Banner img {
+  width: 100%;
+  height: auto;
+}
+
+.contenido, .resultadoPersonajes {
+  padding: 10px;
+}
+
+.listaResultados {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly; /* Cambia el justify-content a space-evenly */
+  flex-wrap: wrap;
+}
+
+.listaResultados li {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+.listaResultados li img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.listaResultados li div {
+  margin-top: 10px;
+}
+
+.listaResultados li p:nth-child(2) {
+  color: black; /* Cambia el color del segundo párrafo (ID) */
+}
+
+.listaResultados li a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: black; /* Cambia el color del texto a negro */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #c9e619;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #58be4b;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+  margin: 0 10px;
+  color: #333;
+}

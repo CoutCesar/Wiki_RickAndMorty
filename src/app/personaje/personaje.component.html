@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <nav class="menuSuperior">
+        <div class="logo">
+            <a href="/index.html"><img src="../assets/images/logo.png" alt=""></a>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a routerLink="/">Inicio</a></li>
+                <li><a routerLink="/personajes">Personajes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="ContenedorImagen">
+            <img id="imagen" [src]="character.image" alt="{{ character.name }}">
+        </div>
+
+        <div class="informacion" *ngIf="character">
+            <div class="contenido">
+                <h4 id="nombre">{{ character?.name || 'Nombre no disponible' }}</h4>
+                <h5 id="id">ID: {{ character?.id }}</h5>
+                <h5 id="estado">Estado: {{ character?.status || 'Estado no disponible' }}</h5>
+                <h5 id="especie">Especie: {{ character?.species || 'Especie no disponible' }}</h5>
+                <h5 id="genero">Género: {{ character?.gender || 'Género no disponible' }}</h5>
+                <h5 id="origen" *ngIf="character?.origin">Origen: {{ character?.origin.name || 'Origen no disponible' }}</h5>
+                <h5 id="ubicacion" *ngIf="character?.location">Ubicación: {{ character?.location.name || 'Ubicación no disponible' }}</h5>
+            </div>
+            
+        </div>        
+
+        <div class="titulo">
+            <h5>Episodios en los que aparece:</h5>
+        </div>
+
+        <ol id="episodios">
+            <li *ngFor="let episode of character.episode">
+                {{ episode }}
+            </li>
+        </ol>
+    </div>
+
+    <footer>
+        <p>Página desarrollada por César Eduardo López Baltazar para la prueba de reclutamiento de Sithec.</p>
+        <p>Este sitio es una página de fans y no está afiliado, ni respaldado de ninguna manera por los creadores,
+            productores o distribuidores de "Rick and Morty". La información proporcionada aquí es para fines de
+            entretenimiento y no pretende ser oficial.</p>
+    </footer>
+</body>
+
+</html>
